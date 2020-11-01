@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html style="color: #ff5600;background: #0c1021;height: 900px;width: auto;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Movies app</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono&amp;subset=latin-ext">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Login-Form-Dark.css') }}">
+</head>
+
+<body class="text-primary" style="color: #ff5600;background: #0c1021;font-family: 'Cutive Mono', monospace;height: 900px;width: auto;">
+    <div class="login-dark" style="filter: brightness(100%) grayscale(0%) hue-rotate(0deg) saturate(100%) sepia(0%);color: #ff5600;font-family: 'Cutive Mono', monospace;background: #0c1021;height: 900px;width: auto;">
+        <div class="justify-content-center align-content-center" style="width: 400px;height: 400px;top: 25%;left: 50%;position: absolute;transform: translate(-50%, -25%);filter: brightness(100%);background: #0c1021;color: #ff5600;">
+            <form id="login-or-register-form" method="post" style="background: #0c1021;color: #ff5600;width: 100%;min-width: 400px;max-width: auto;">
+                <header class="align-items-center" id="movies-app-title" style="height: 10%;background: #0c1021;color: #ff5600;width: 100%;">
+                    <h2 class="text-center d-flex justify-content-center align-content-center align-items-lg-center align-items-xl-center" style="color: #ff5600;text-align: center;height: 100%;border-color: #ca7500;background: #0c1021;margin: 10px;margin-bottom: 20px;">Movies app</h2>
+                </header>
+                <div class="form-group" style="color: #ca7500;background: #0c1021;"><input class="form-control" type="email" id="email-input" name="email" placeholder="Your email here stupid" style="filter: brightness(100%);margin: 2px;height: 38px;border-radius: 5px;background: #0c1021;color: #ff5600;text-align: left;border-width: 1px;border-style: solid;"
+                        required="" inputmode="email"></div>
+                <div class="form-group" style="color: #ca7500;"><input class="form-control" type="password" id="password-input" name="password" placeholder="Password" style="filter: brightness(100%);color: #ff5600;margin: 2px;height: 38px;text-align: left;border-radius: 5px;background: #0c1021;border-width: 1px;border-style: solid;"
+                        minlength="12" maxlength="64" required=""></div>
+                <div class="form-group d-flex flex-row justify-content-center align-items-center align-content-center" style="border-width: 1px;color: #ca7500;"><button class="btn btn-primary btn-block text-center float-none d-lg-flex d-xl-flex justify-content-between align-items-center align-content-center justify-content-lg-center align-items-lg-center align-items-xl-center" id="register" type="submit"
+                        style="filter: brightness(100%);color: #ff5600;margin: 2px;height: 38px;text-align: left;border-radius: 5px;background: #0c1021;border-width: 1px;border-style: solid;" name="register">Register</button><button class="btn btn-primary btn-block text-center float-none d-lg-flex d-xl-flex justify-content-between align-items-center align-content-center justify-content-lg-center align-items-lg-center align-items-xl-center"
+                        id="login" type="submit" style="filter: brightness(100%);color: #ff5600;margin: 2px;height: 38px;text-align: left;border-radius: 5px;background: #0c1021;border-width: 1px;border-style: solid;" name="login">Log In</button></div>
+                <button
+                    class="btn btn-primary btn-block text-center float-none d-lg-flex d-xl-flex justify-content-between align-items-center align-content-center justify-content-lg-center align-items-lg-center align-items-xl-center" id="register-1" type="submit"
+                    style="filter: brightness(100%);color: #ff5600;margin: 2px;height: 38px;text-align: left;border-radius: 5px;background: #0c1021;border-width: 1px;border-style: solid;" name="register">I am forgetful...</button>
+            </form>
+        </div>
+    </div>
+     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+     <script type="text/javascript" src="{{ url_for('static', filename='bootstrap/js/bootstrap.min.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html style="background: #0c1021;color: #ff5600;width: auto;height: auto;">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Movies app</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Button-Modal-popup-team-member-1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Button-Modal-popup-team-member-2.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/Login-Form-Dark.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/styles.css') }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono&amp;subset=latin-ext">
+
+</head>
+
+<body class="d-xl-flex flex-shrink-0 align-items-center align-content-center justify-content-xl-center align-items-xl-end" style="background: #0c1021;color: #ff5600;width: auto;height: auto;font-family: 'Cutive Mono', monospace;">
+    <div class="d-xl-flex flex-shrink-0 justify-content-center align-content-center align-self-center justify-content-xl-center align-items-xl-start" style="height: auto;width: auto;color: #ff5600;font-family: 'Cutive Mono', monospace;background: #0c1021;">
+        <div class="d-flex flex-column align-items-center justify-content-xl-start align-items-xl-center" style="width: 100%;margin-top: 0px;margin-right: 0;margin-left: 0;height: 100%;background: #0c1021;">
+            <div class="container" style="background: #0c1021;height: 100%;max-width: auto;min-width: auto;width: 100%;">
+                <header class="text-center d-xl-flex justify-content-xl-center align-items-xl-center" style="width: 100auto;height: 100px;margin-top: 5px;text-align: left;background: #0c1021;">
+                    <h1 class="d-xl-flex justify-content-xl-center align-items-xl-center" style="color: #ff5600;background: #0c1021;">Movies App</h1>
+                </header>
+                <div class="row" style="background: #0c1021;width: auto;">
+                    <div class="col-md-12 d-xl-flex justify-content-xl-center align-items-xl-center" style="border-style: none;background: #0c1021;height: 60px;"><input type="search" style="background: #0c1021;border-width: 0px;border-style: none;color: #ff5600;font-size: 19px;text-align: center;height: 40px;margin-top: 5px;margin-bottom: 5px;width: 500px;" placeholder="Search..." name="search"
+                            inputmode="verbatim"></div>
+                </div>
+                <div class="row" style="height: 100%;background: #0c1021;width: 100%;">
+                    <div class="col-md-3" style="height: 900px;background: #0c1021;">
+                        <header class="d-xl-flex justify-content-xl-center align-items-xl-end" style="height: 50px;background: #0c1021;text-align: left;">
+                            <h1 style="font-size: 24px;text-align: center;">Movies</h1>
+                        </header>
+                        <ul class="list-unstyled text-center" style="height: 100%;/*background: #0c1021;*/overflow: auto;width: 100%;margin: 0px;">
+                            {% for movie in movies %}
+                            <li style="padding: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;background: transparent;width: 100%;height: 34px;"><button class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#modal1" type="button" style="width: 100%;height: 100%;background: #0c1021;border-width: 0px;color: #ff5600;padding: 0;">
+                                {{ movie.title}}</button>
+                                <div
+                                    class="modal fade" role="dialog" tabindex="-1" id="modal1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background: #122135;border-width: 0px;">
+                                                <h4 class="modal-title">{{ movie.title }}</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                            <div class="modal-body" style="background: #122135;">
+                                                <p>{{ movie.description }}</p>
+                                            </div>
+                                            <div class="modal-footer" style="background: #122135;border-width: 0px;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+                                        </div>
+                                    </div>
+                    </div>
+                    </li>
+                            {% endfor  %}
+                    </ul>
+                </div>
+                    <div class="col-md-3" style="height: 900px;background: #0c1021;">
+                        <header class="d-xl-flex justify-content-xl-center align-items-xl-end" style="height: 50px;background: #0c1021;text-align: left;">
+                            <h1 style="font-size: 24px;text-align: center;">Movies</h1>
+                        </header>
+                        <ul class="list-unstyled text-center" style="height: 100%;/*background: #0c1021;*/overflow: auto;width: 100%;margin: 0px;">
+                            {% for actor in actors %}
+                            <li style="padding: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;background: transparent;width: 100%;height: 34px;"><button class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#modal1" type="button" style="width: 100%;height: 100%;background: #0c1021;border-width: 0px;color: #ff5600;padding: 0;">
+                                {{ actor.actor_full_name}}</button>
+                                <div
+                                    class="modal fade" role="dialog" tabindex="-1" id="modal1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background: #122135;border-width: 0px;">
+                                                <h4 class="modal-title">{{ actor.actor_full_name }}</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                            <div class="modal-body" style="background: #122135;">
+                                                <p>{{ actor.actor_full_name }}</p>
+                                            </div>
+                                            <div class="modal-footer" style="background: #122135;border-width: 0px;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+                                        </div>
+                                    </div>
+                    </div>
+                    </li>
+                            {% endfor  %}
+                    </ul>
+                </div>
+                    <div class="col-md-3" style="height: 900px;background: #0c1021;">
+                        <header class="d-xl-flex justify-content-xl-center align-items-xl-end" style="height: 50px;background: #0c1021;text-align: left;">
+                            <h1 style="font-size: 24px;text-align: center;">Directors</h1>
+                        </header>
+                        <ul class="list-unstyled text-center" style="height: 100%;/*background: #0c1021;*/overflow: auto;width: 100%;margin: 0px;">
+                            {% for director in directors %}
+                            <li style="padding: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;background: transparent;width: 100%;height: 34px;"><button class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#modal1" type="button" style="width: 100%;height: 100%;background: #0c1021;border-width: 0px;color: #ff5600;padding: 0;">
+                                {{ director.director_full_name}}</button>
+                                <div
+                                    class="modal fade" role="dialog" tabindex="-1" id="modal1">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header" style="background: #122135;border-width: 0px;">
+                                                <h4 class="modal-title">{{ director.director_full_name }}</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                            <div class="modal-body" style="background: #122135;">
+                                                <p>{{ directors.director_full_name }}</p>
+                                            </div>
+                                            <div class="modal-footer" style="background: #122135;border-width: 0px;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+                                        </div>
+                                    </div>
+                    </div>
+                    </li>
+                            {% endfor  %}
+                    </ul>
+                </div>
+                <div class="col-md-3" style="background: #0c1021;">
+                    <header class="d-xl-flex justify-content-xl-center align-items-xl-end" style="height: 50px;background: #0c1021;">
+                        <h1 style="font-size: 24px;text-align: center;">Genres</h1>
+                    </header>
+                    <ul class="list-unstyled text-center" style="height: 100%;">
+                        {% for genre in genres %}
+                        <li style="padding: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;background: transparent;width: 100%;height: 34px;"><button class="btn btn-primary text-nowrap" data-toggle="modal" data-target="#modal1" type="button" style="width: 100%;height: 100%;background: #0c1021;border-width: 0px;color: #ff5600;padding: 0;">
+                            {{ genre.genre_name }}</button>
+                            <div class="modal fade"
+                                role="dialog" tabindex="-1" id="modal-4">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header" style="background: #122135;border-width: 0px;">
+                                            <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                        <div class="modal-body" style="background: #122135;">
+                                            <p>The content of your modal.</p>
+                                        </div>
+                                        <div class="modal-footer" style="background: #122135;border-width: 0px;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="list-unstyled text-center" style="height: 100%;/*background: #0c1021;*/overflow: auto;">
+                                <li style="padding: 0px;padding-top: 0px;padding-bottom: 0px;padding-left: 0px;background: transparent;width: 100%;height: 34px;">
+                                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-5">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header" style="background: #122135;border-width: 0px;">
+                                                    <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                                <div class="modal-body" style="background: #122135;">
+                                                    <p>The content of your modal.</p>
+                                                </div>
+                                                <div class="modal-footer" style="background: #122135;border-width: 0px;"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        {% endfor  %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/bootstrap/js/bootstrap.min.js') }}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='assets/js/Button-Modal-popup-team-member.js') }}"></script>
+
+</body>
+
+</html>
